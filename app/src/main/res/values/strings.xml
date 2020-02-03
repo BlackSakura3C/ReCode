@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ReCode</string>
+    <string name="title_home">推送</string>
+    <string name="title_dashboard">备忘录</string>
+    <string name="title_notifications">自主测试</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

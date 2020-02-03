@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:andriod="http://schemas.android.com/apk/res/android"
+    andriod:layout_width="match_parent"
+    andriod:layout_height="match_parent"
+    andriod:background="@mipmap/welcome"
+    andriod:orientation="vertical">
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="match_parent"
+        andriod:orientation="vertical"
+        andriod:layout_marginTop="350dp"
+        andriod:layout_marginLeft="25dp"
+        andriod:layout_marginRight="25dp">
+        <EditText
+            andriod:id="@+id/LoginName"
+            andriod:layout_width="match_parent"
+            andriod:layout_height="wrap_content"
+            andriod:hint="账号"/>
+        <EditText
+            andriod:id="@+id/LoginPassword"
+            andriod:layout_width="match_parent"
+            andriod:layout_height="wrap_content"
+            andriod:hint="密码"/>
+        <LinearLayout
+            andriod:layout_width="match_parent"
+            andriod:layout_height="match_parent"
+            andriod:layout_marginTop="20dp"
+            andriod:orientation="vertical">
+            <Button
+                andriod:id="@+id/LoginConfirm"
+                andriod:layout_width="match_parent"
+                andriod:layout_height="wrap_content"
+                andriod:layout_gravity="center"
+                andriod:text="登录"/>
+            <RelativeLayout
+                andriod:layout_width="match_parent"
+                andriod:layout_height="match_parent"
+                andriod:layout_marginTop="20dp">
+                <TextView
+                    andriod:id="@+id/LoginSignIn"
+                    andriod:layout_width="wrap_content"
+                    andriod:layout_height="wrap_content"
+                    andriod:layout_alignParentLeft="true"
+                    andriod:text="免费注册" />
+                <TextView
+                    andriod:id="@+id/LoginResetPwd"
+                    andriod:layout_width="wrap_content"
+                    andriod:layout_height="wrap_content"
+                    andriod:layout_alignParentRight="true"
+                    andriod:text="忘记密码"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

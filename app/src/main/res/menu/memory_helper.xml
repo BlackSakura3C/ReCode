@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/MyAnlysis"
+        android:title="我的化验单"/>
+    <item
+        android:id="@+id/LastSuggestion"
+        android:title="历史建议"/>
+    <item
+        android:id="@+id/ConnectUs"
+        android:title="联系我们"/>
+</menu>
