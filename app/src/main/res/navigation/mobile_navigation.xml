@@ -4,22 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_memory">
-
     <fragment
         android:id="@+id/navigation_subscription"
         android:name="com.example.testui.ui.subscription.HomeFragment"
-        android:label="@string/title_home"
         tools:layout="@layout/fragment_subscrption" />
 
     <fragment
         android:id="@+id/navigation_memory"
         android:name="com.example.testui.ui.memory.DashboardFragment"
-        android:label="备忘录"
         tools:layout="@layout/fragment_memory" />
 
     <fragment
         android:id="@+id/navigation_test"
         android:name="com.example.testui.ui.test.NotificationsFragment"
-        android:label="@string/title_notifications"
         tools:layout="@layout/fragment_test" />
 </navigation>
