@@ -34,23 +34,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mDrawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mDrawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         ActionBar actionBar=getSupportActionBar();
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-//
-////        View icon=(View) findViewById(R.id.AddMemory);
-////        icon.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View v) {
-////                Toast.makeText(getBaseContext(),"You have clickes AAAAAAAAAAAAAAAA",Toast.LENGTH_SHORT);
-////            }
-////        });
-//
-//
-//        //Log.d("MDDDDDDDDDDDDDDDD",toolbar.toString());
         if(actionBar!=null){
             Log.d("MSSSSSSSSSSSSSSSSSSS",actionBar.toString());
             Log.d("MFFFFFFFFFFFFFFFFFFF","ssssssssssss");
@@ -85,6 +74,23 @@ public class MainActivity extends AppCompatActivity {
 //                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
 //                .setDrawerLayout(drawer)
 //                .build();
+        NavigationView navigationView=(NavigationView)findViewById(R.id.nav_view2);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                mDrawerLayout.closeDrawers();
+                /*
+                *
+                * 预留用于横拉导航栏的事件编写
+                *
+                * */
+                return true;
+            }
+        });
+
+
+
+
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -107,26 +113,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Toast.makeText(this,"You have clickes AAAAAAAAAAAAAAAA",Toast.LENGTH_SHORT);
         switch (item.getItemId()){
             case android.R.id.home:
-                Log.d("meeeeeeeeeeeeeee","sssssssssssssss");
+                Log.d("msg","Testok");
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
             case R.id.AddMemory:
                 Intent intent2=new Intent(this,LoginActivity.class);
-                Toast.makeText(this,"You have clickes too",Toast.LENGTH_SHORT);
+                Toast.makeText(this,"You have clickes too",Toast.LENGTH_SHORT).show();
                 startActivity(intent2);
-                Toast.makeText(this,"You have clickes",Toast.LENGTH_SHORT);
                 break;
             case R.id.DelMemory:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
-//            case  R.id.ConnectUs:
-//                Intent intent=new Intent(this,LoginActivity.class);
-//                Toast.makeText(this,"You have clickes too",Toast.LENGTH_SHORT);
-//                startActivity(intent);
-//                break;
+
             default:
                 break;
         }

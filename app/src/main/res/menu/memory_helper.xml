@@ -1,14 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/AddMemory"
-        android:title="添加备忘录"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_home_black_24dp"
-        />
+
     <item
         android:id="@+id/DelMemory"
         android:title="删除备忘录"
         app:showAsAction="always"
-        android:icon="@drawable/ic_notifications_black_24dp"/>
+        android:icon="@drawable/ic_delete_black_24dp"/>
+    <item
+        android:id="@+id/AddMemory"
+        android:title="编辑"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_edit_black_24dp"
+        />
+
 </menu>
