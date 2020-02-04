@@ -30,13 +30,15 @@ import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
+    private AppBarConfiguration mAppBarConfiguration;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDrawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mDrawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         ActionBar actionBar=getSupportActionBar();
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
@@ -50,13 +52,13 @@ public class MainActivity extends AppCompatActivity {
             //actionBar.setHomeAsUpIndicator(R.drawable.ic_dashboard_black_24dp);
         }
 
-        ImageView imageView=(ImageView)findViewById(R.id.ToolBar_Icon);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDrawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
+//        ImageView imageView=(ImageView)findViewById(R.id.ToolBar_Icon);
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mDrawerLayout.openDrawer(GravityCompat.START);
+//            }
+//        });
 
 
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +90,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+//        mAppBarConfiguration = new AppBarConfiguration.Builder(
+//                R.id.nav_MyAnlysis, R.id.nav_LastSuggestion, R.id.nav_slideshow,
+//                R.id.nav_ConnectUs, R.id.nav_Setting, R.id.nav_LogOut)
+//                .setDrawerLayout(mDrawerLayout)
+//                .build();
+//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+//        NavigationUI.setupWithNavController(navigationView, navController);
+
 
 
 
@@ -105,32 +118,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.memory_helper,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home:
-                Log.d("msg","Testok");
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                break;
-            case R.id.AddMemory:
-                Intent intent2=new Intent(this,LoginActivity.class);
-                Toast.makeText(this,"You have clickes too",Toast.LENGTH_SHORT).show();
-                startActivity(intent2);
-                break;
-            case R.id.DelMemory:
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                break;
-
-            default:
-                break;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.memory_helper,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()){
+//            case android.R.id.home:
+//                Log.d("msg","Testok");
+//                mDrawerLayout.openDrawer(GravityCompat.START);
+//                break;
+//            case R.id.AddMemory:
+//                Intent intent2=new Intent(this,LoginActivity.class);
+//                Toast.makeText(this,"You have clickes too",Toast.LENGTH_SHORT).show();
+//                startActivity(intent2);
+//                break;
+//            case R.id.DelMemory:
+//                mDrawerLayout.openDrawer(GravityCompat.START);
+//                break;
+//
+//            default:
+//                break;
+//        }
+//        return true;
+//    }
 
 }
