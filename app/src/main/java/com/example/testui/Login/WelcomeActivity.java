@@ -1,10 +1,12 @@
-package com.example.testui;
+package com.example.testui.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
+
+import com.example.testui.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void run() {
                 try{
                     sleep(1000);
-                    Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
+                    Intent intent=new Intent(WelcomeActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e){

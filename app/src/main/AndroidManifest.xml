@@ -9,19 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Memory.MemoryMainActivity"></activity>
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".Login.SigninActivity"></activity>
+        <activity android:name=".Memory.MemoryMainActivity" />
+        <activity android:name=".Login.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".Login.LoginActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan|stateHidden">
-            <!--            用于设置该活动中由于软键盘弹出导致整个界面向上进行移动的情况-->
+
+            <!-- 用于设置该活动中由于软键盘弹出导致整个界面向上进行移动的情况 -->
         </activity>
     </application>
 

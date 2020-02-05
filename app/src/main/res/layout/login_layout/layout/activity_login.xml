@@ -10,7 +10,7 @@
         andriod:layout_width="match_parent"
         andriod:layout_height="match_parent"
         andriod:orientation="vertical"
-        andriod:layout_marginTop="350dp"
+        andriod:layout_marginTop="380dp"
         andriod:layout_marginLeft="25dp"
         andriod:layout_marginRight="25dp">
         <EditText
