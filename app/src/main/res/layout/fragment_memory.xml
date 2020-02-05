@@ -16,15 +16,25 @@
     android:orientation="vertical"
     android:paddingTop="?attr/actionBarSize"
     android:layout_marginBottom="60dp">
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试ing"
-        android:gravity="center"/>
+        android:background="@color/gainsboro"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_view"/>
+    </FrameLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/welcome">
+        android:background="@mipmap/welcome"
+        >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/todo_list"
