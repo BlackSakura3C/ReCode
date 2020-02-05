@@ -23,6 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
+import androidx.core.widget.NestedScrollView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -36,6 +37,8 @@ import com.example.testui.Memory.MemoryMainActivity;
 import com.example.testui.Memory.ToDoList;
 import com.example.testui.Memory.ToDoListAdapter;
 import com.example.testui.R;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +47,9 @@ public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
     private List<ToDoList> toDoLists=new ArrayList<>();
+    private NestedScrollView nestedScrollView;
+    private BottomSheetBehavior bottomSheetBehavior;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
@@ -90,6 +96,30 @@ public class DashboardFragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
         Log.d("Adpter","SetOk!!!!!!!!!!!!!!");
+
+
+        /*编写悬浮按钮的点击事件*/
+        nestedScrollView=(NestedScrollView)root.findViewById(R.id.bottom_sheet) ;
+        bottomSheetBehavior=BottomSheetBehavior.from(nestedScrollView);
+        bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View view, int i) {
+
+            }
+
+            @Override
+            public void onSlide(@NonNull View view, float v) {
+
+            }
+        });
+        FloatingActionButton fltbtn=(FloatingActionButton)root.findViewById(R.id.floatbtn);
+        fltbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheet();
+            }
+        });
+
         return root;
 
     }
@@ -106,6 +136,10 @@ public class DashboardFragment extends Fragment {
             toDoLists.add(item3);
         }
 
+    }
+    public void showBottomSheet(){
+        Log.d("BottomSheet","OKKKKKKKKKK");
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
     }
 
     @Override

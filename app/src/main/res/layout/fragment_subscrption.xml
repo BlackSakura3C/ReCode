@@ -19,4 +19,7 @@ android:orientation="vertical">
     android:layout_height="wrap_content"
     android:id="@+id/test_ui3"
     android:text="ops3"></Button>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
