@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -34,6 +35,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class DashboardFragment extends Fragment {
@@ -112,6 +114,36 @@ public class DashboardFragment extends Fragment {
                 showBottomSheet();
             }
         });
+
+
+        ImageView imageView_clock=(ImageView)root.findViewById(R.id.noticetime_add_imgview);
+        imageView_clock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                TimePicker picker = new TimePicker(this, TimePicker.HOUR_24);
+//                picker.setUseWeight(false);
+//                picker.setCycleDisable(false);
+//                picker.setRangeStart(0, 0);//00:00
+//                picker.setRangeEnd(23, 59);//23:59
+//                int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+//                int currentMinute = Calendar.getInstance().get(Calendar.MINUTE);
+//                picker.setSelectedItem(currentHour, currentMinute);
+//                picker.setTopLineVisible(false);
+//                picker.setTextPadding(ConvertUtils.toPx(this, 15));
+//                picker.setOnTimePickListener(new TimePicker.OnTimePickListener() {
+//                    @Override
+//                    public void onTimePicked(String hour, String minute) {
+//                        showToast(hour + ":" + minute);
+//                        String text=hour+":"+minute;
+//                        editText.setText(text);
+//
+//                    }
+//                });
+//                picker.show();
+            }
+        });
+
+
 
         return root;
 

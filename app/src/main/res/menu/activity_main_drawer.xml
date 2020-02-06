@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_MyAnlysis"
+            android:icon="@drawable/ic_local_hospital_black_24dp"
+            android:title="@string/menu_MyAnlysis" />
+        <item
+            android:id="@+id/nav_LastSuggestion"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="@string/menu_LastSuggestion" />
+        <item
+            android:id="@+id/nav_ConnectUs"
+            android:icon="@drawable/ic_call_black_24dp"
+            android:title="@string/menu_ConnectUs" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="@string/menu_slideshow" />
+    </group>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_Setting"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/menu_Setting" />
+            <item
+                android:id="@+id/nav_LogOut"
+                android:icon="@drawable/ic_backspace_black_24dp"
+                android:title="@string/menu_LogOut" />
+        </menu>
+    </item>
+
+</menu>
