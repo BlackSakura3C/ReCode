@@ -56,6 +56,7 @@
             android:id="@+id/signin_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="密码"/>
         <View
             android:layout_width="match_parent"
@@ -64,6 +65,7 @@
             android:id="@+id/signin_confirmpwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="确认密码"/>
         <View
             android:layout_width="match_parent"

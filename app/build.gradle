@@ -23,6 +23,7 @@ android {
                     [
                             'src/main/res/layout/memory_layout',
                             'src/main/res/layout/login_layout',
+                            'src/main/res/layout/subsciption_layout',
                             'src/main/res/layout',
                             'src/main/res'
                     ]

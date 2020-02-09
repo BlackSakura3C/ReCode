@@ -22,6 +22,7 @@
             andriod:id="@+id/LoginPassword"
             andriod:layout_width="match_parent"
             andriod:layout_height="wrap_content"
+            andriod:inputType="textPassword"
             andriod:hint="密码"/>
         <LinearLayout
             andriod:layout_width="match_parent"

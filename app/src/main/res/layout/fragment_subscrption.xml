@@ -4,22 +4,14 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
 android:layout_height="match_parent" android:paddingTop="?attr/actionBarSize"
 android:orientation="vertical">
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/test_ui"
-    android:text="ops"/>
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/test_ui2"
-    android:text="ops2"></Button>
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/test_ui3"
-    android:text="ops3"></Button>
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:background="@mipmap/welcome">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/subscription_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
 </LinearLayout>
