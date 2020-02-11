@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.testui.TestSheet.SheetMainActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -80,7 +82,15 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                mDrawerLayout.closeDrawers();
+                switch (menuItem.getItemId()){
+                    case R.id.nav_MyAnlysis:
+                        Intent intent=new Intent(MainActivity.this, SheetMainActivity.class);
+                        startActivity(intent);
+                        break;
+                    default:
+                        mDrawerLayout.closeDrawers();
+                }
+
                 /*
                 *
                 * 预留用于横拉导航栏的事件编写
