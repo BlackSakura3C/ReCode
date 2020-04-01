@@ -33,7 +33,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/welcome"
+        android:background="@mipmap/bg_3"
         >
 
         <androidx.recyclerview.widget.RecyclerView

@@ -4,7 +4,7 @@
     xmlns:andriod="http://schemas.android.com/apk/res/android"
     andriod:layout_width="match_parent"
     andriod:layout_height="match_parent"
-    andriod:background="@mipmap/welcome"
+    andriod:background="@mipmap/bg_3"
     andriod:orientation="vertical">
     <LinearLayout
         andriod:layout_width="match_parent"
