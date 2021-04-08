@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".TestSheet.SheetSuggestionActivity"></activity>
-        <activity android:name=".TestSheet.SheetMainActivity" />
+        <activity
+            android:name=".TestSheet.SheetMainActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".Subscription.SubscriptionMainActivity" />
         <activity android:name=".Login.SigninActivity" />
         <activity android:name=".Memory.MemoryMainActivity" />

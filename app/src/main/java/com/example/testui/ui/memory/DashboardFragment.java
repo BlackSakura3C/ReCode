@@ -153,11 +153,11 @@ public class DashboardFragment extends Fragment {
     private void initToDoList(){
         Log.d("MSFFFFFFFFFFF","initok");
         for(int i=0;i<5;i++){
-            ToDoList item1=new ToDoList("服用XXXXX药物两粒(切忌空腹服用)");
+            ToDoList item1=new ToDoList("XXX老人买菜上门服务");
             toDoLists.add(item1);
-            ToDoList item2=new ToDoList("天气不错，推荐户外进行适当轻度活动");
+            ToDoList item2=new ToDoList("XXX老人紧急求助服务");
             toDoLists.add(item2);
-            ToDoList item3=new ToDoList("服用XXXXX药物三片(切忌空腹服用)");
+            ToDoList item3=new ToDoList("XXX老人体检服务");
             toDoLists.add(item3);
         }
 
