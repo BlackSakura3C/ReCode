@@ -14,14 +14,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.testui.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SheetMainActivity extends AppCompatActivity {
     private List<SheetItem> sheetItems = new ArrayList<>();
+    private String[] inputcontents;
     private String[] sheettestnamelist = {"叶酸","糖化血红蛋白","白蛋白","肿瘤坏死因子:α","甲状腺素分子FT3"
     ,"总睾酮","皮质醇(早上)","汞","铅","砷","镉","总胆固醇","腰围","BMI(体重指数)"};
     private String[] sheettestunitlist={"ng/mL","%","g/dL","pg/mL","pg/mL","ng/dL","μg/dL","μg/L","μg/dL"
@@ -63,10 +67,15 @@ public class SheetMainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GetInputData(adapter,layoutManager);
-                Intent intent = new Intent(SheetMainActivity.this, SheetSuggestionActivity.class);
-                startActivity(intent);
-                finish();
+                inputcontents= adapter.getInputcontents();
+                if(CheckCompleteness(inputcontents)){
+                    Intent intent = new Intent(SheetMainActivity.this, SheetSuggestionActivity.class);
+                    intent.putExtra("input_data",inputcontents);
+                    intent.putExtra("test_name",sheettestnamelist);
+                    intent.putExtra("test_unit",sheettestunitlist);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }
@@ -80,13 +89,21 @@ public class SheetMainActivity extends AppCompatActivity {
             sheetItems.add(sheetItem);
         }
     }
-    private void GetInputData(SheetItemAdapter adapter,LinearLayoutManager layoutManager){
-        int len=adapter.getItemCount();
-        EditText[] editTexts;
-        Log.d("DATASHEET1",layoutManager.findViewByPosition(0).toString());
-        Log.d("DATASHEET2",layoutManager.findViewByPosition(1).toString());
+    private boolean CheckCompleteness(String[] input){
+        int len=input.length;
+        Pattern pattern=Pattern.compile("^\\d+(\\.\\d+)?$");
+        Matcher matcher;
         for(int i=0;i<len;i++){
-
+            if(input[i]==null){
+                Toast.makeText(SheetMainActivity.this,"您有化验项没有填写！",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            matcher=pattern.matcher(input[i]);
+            if(!matcher.matches()){
+                Toast.makeText(SheetMainActivity.this,"填写内容格式有误请检查！",Toast.LENGTH_SHORT).show();
+                return false;
+            }
         }
+        return true;
     }
 }
