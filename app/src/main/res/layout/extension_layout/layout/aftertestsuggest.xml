@@ -1,131 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/welcome">
+    android:background="@mipmap/welcome"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_main" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="化验单测试结果"
-        android:textStyle="bold"
-        android:paddingTop="15dp"
         android:gravity="center"
-        android:textSize="25sp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="测试综合结果说明："/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="      根据您的化验结果，您目前的状况较为良好，但是化验结果中有两项数值偏离正常标准，希望能引起您的注意。"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="具体情况说明："/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="15dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="1. 同型半胱氨酸>6mmol/L\n    建议服用甲基钴胺素1mg"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="15dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="2.空腹胰岛素>4.5mU/ml 硫辛酸100mg\n    每天三次 黄连素300-500mg"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="系统建议添加的备忘录选项："/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="15dp"
-        android:paddingTop="10dp">
-        <CheckedTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:background="@color/lightgoldenrodyellow"
-            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-            android:checked="true"
-            android:textSize="18sp"
-            android:gravity="center_vertical"
-            android:text="建议服用甲基钴胺素1mg \n预定提醒时间为早上9点"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="15dp"
-        android:paddingTop="10dp">
-        <CheckedTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:background="@color/lightgoldenrodyellow"
-            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-            android:checked="true"
-            android:textSize="18sp"
-            android:gravity="center_vertical"
-            android:text="建议服用黄连素300-500mg \n预定提醒时间为早上9点 中午12点 晚上6点"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:paddingTop="15dp"
-        android:paddingLeft="15dp"
+        android:text="化验单测试结果"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:text="测试综合结果说明："
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="      根据您的化验结果，您目前的状况较为良好，但是化验结果中有两项数值偏离正常标准，希望能引起您的注意。"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:text="具体情况说明："
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
         android:paddingRight="15dp"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="1.系统默认勾选了以上建议，用户可以根据自身情况及医嘱取消勾选"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="2.系统预设的提醒时间，用户可以在备忘录界面中自行修改"/>
-    </LinearLayout>
+        android:text="1. 同型半胱氨酸>6mmol/L\n    建议服用甲基钴胺素1mg"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:text="2.空腹胰岛素>4.5mU/ml 硫辛酸100mg\n    每天三次 黄连素300-500mg"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:text="系统建议添加的备忘录选项："
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="25dp"
         android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp">
+
+        <CheckedTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightgoldenrodyellow"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="建议服用甲基钴胺素1mg \n预定提醒时间为早上9点"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp">
+
+        <CheckedTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightgoldenrodyellow"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="建议服用黄连素300-500mg \n预定提醒时间为早上9点 中午12点 晚上6点"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1.系统默认勾选了以上建议，用户可以根据自身情况及医嘱取消勾选"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2.系统预设的提醒时间，用户可以在备忘录界面中自行修改"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="25dp"
         android:paddingRight="20dp">
+
         <Button
             android:id="@+id/testsheet_addnotice_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="设置备忘录"/>
+            android:text="设置备忘录" />
     </LinearLayout>
 
 

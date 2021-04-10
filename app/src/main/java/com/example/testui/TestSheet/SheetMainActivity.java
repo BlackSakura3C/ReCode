@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +30,9 @@ public class SheetMainActivity extends AppCompatActivity {
     private String[] sheettestnamelist = {"叶酸","糖化血红蛋白","白蛋白","肿瘤坏死因子:α","甲状腺素分子FT3"
     ,"总睾酮","皮质醇(早上)","汞","铅","砷","镉","总胆固醇","腰围","BMI(体重指数)"};
     private String[] sheettestunitlist={"ng/mL","%","g/dL","pg/mL","pg/mL","ng/dL","μg/dL","μg/L","μg/dL"
-    ,"μg/L","μg/L","mg/dL","cm","标准是18.5～23.9"};
+    ,"μg/L","μg/L","mg/dL","cm"," "};
+    private String sex;
+    private RadioGroup radioGroup;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,7 @@ public class SheetMainActivity extends AppCompatActivity {
         TextView toolbartext = (TextView) findViewById(R.id.toolbar_maintext);
         toolbartext.setText("化验单");
         ImageView toolbarimg = (ImageView) findViewById(R.id.ToolBar_Icon);
-        toolbarimg.setImageResource(R.drawable.ic_backspace_black_24dp);
+        toolbarimg.setImageResource(R.drawable.ic_arrow_back_black_24dp);
         toolbarimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +66,8 @@ public class SheetMainActivity extends AppCompatActivity {
         final SheetItemAdapter adapter = new SheetItemAdapter(sheetItems);
         recyclerView.setAdapter(adapter);
 
+        radioGroup=(RadioGroup)findViewById(R.id.sheet_test_sex);
+
         Button btn1 = (Button) findViewById(R.id.testsheet_btn);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +78,7 @@ public class SheetMainActivity extends AppCompatActivity {
                     intent.putExtra("input_data",inputcontents);
                     intent.putExtra("test_name",sheettestnamelist);
                     intent.putExtra("test_unit",sheettestunitlist);
+                    intent.putExtra("sex",sex);
                     startActivity(intent);
                     finish();
                 }
@@ -90,6 +96,14 @@ public class SheetMainActivity extends AppCompatActivity {
         }
     }
     private boolean CheckCompleteness(String[] input){
+        if(radioGroup.getCheckedRadioButtonId()==R.id.sheet_test_sex_male)
+            sex="男";
+        else if(radioGroup.getCheckedRadioButtonId()==R.id.sheet_test_sex_female)
+            sex="女";
+        else{
+            Toast.makeText(SheetMainActivity.this,"您的性别没有填写！",Toast.LENGTH_SHORT).show();
+            return false;
+        }
         int len=input.length;
         Pattern pattern=Pattern.compile("^\\d+(\\.\\d+)?$");
         Matcher matcher;
@@ -98,7 +112,7 @@ public class SheetMainActivity extends AppCompatActivity {
                 Toast.makeText(SheetMainActivity.this,"您有化验项没有填写！",Toast.LENGTH_SHORT).show();
                 return false;
             }
-            matcher=pattern.matcher(input[i]);
+            matcher=pattern.matcher(input[i].trim());
             if(!matcher.matches()){
                 Toast.makeText(SheetMainActivity.this,"填写内容格式有误请检查！",Toast.LENGTH_SHORT).show();
                 return false;

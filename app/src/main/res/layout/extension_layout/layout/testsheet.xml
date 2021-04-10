@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg_1">
+    android:background="@mipmap/welcome"
+    android:alpha="0.85">
     <include layout="@layout/toolbar_main"/>
     <TextView
         android:layout_width="match_parent"
@@ -34,11 +35,13 @@
             android:layout_weight="0.4"
             android:orientation="horizontal">
             <RadioButton
+                android:id="@+id/sheet_test_sex_male"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
                 android:text="男"/>
             <View
+                android:id="@+id/sheet_test_sex_female"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"/>
@@ -49,11 +52,18 @@
                 android:layout_weight="0.4"/>
         </RadioGroup>
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="需填写化验项目:"
+        android:textSize="18sp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,8 +79,8 @@
             android:layout_height="0dp"
             android:layout_weight="0.25"
             android:orientation="vertical"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:paddingTop="10dp">
             <Button
                 android:id="@+id/testsheet_btn"
