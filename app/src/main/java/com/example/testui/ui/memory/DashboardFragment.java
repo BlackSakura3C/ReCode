@@ -152,14 +152,22 @@ public class DashboardFragment extends Fragment {
 
     private void initToDoList(){
         Log.d("MSFFFFFFFFFFF","initok");
-        for(int i=0;i<5;i++){
-            ToDoList item1=new ToDoList("XXX老人买菜上门服务");
-            toDoLists.add(item1);
-            ToDoList item2=new ToDoList("XXX老人紧急求助服务");
-            toDoLists.add(item2);
-            ToDoList item3=new ToDoList("XXX老人体检服务");
-            toDoLists.add(item3);
-        }
+//        for(int i=0;i<5;i++){
+//            ToDoList item1=new ToDoList("XXX老人买菜上门服务");
+//            toDoLists.add(item1);
+//            ToDoList item2=new ToDoList("XXX老人紧急求助服务");
+//            toDoLists.add(item2);
+//            ToDoList item3=new ToDoList("XXX老人体检服务");
+//            toDoLists.add(item3);
+//        }
+        ToDoList item1=new ToDoList("及时就医进一步检查甲状腺功能");
+        toDoLists.add(item1);
+        ToDoList item2=new ToDoList("生活规律，适当运动，肥胖者适当减轻体重");
+        toDoLists.add(item2);
+        ToDoList item3=new ToDoList("清淡饮食，忌过量食用油腻及辛辣刺激性食物以及动物内脏类食物，应定期复查血脂动态观察其变化");
+        toDoLists.add(item3);
+        ToDoList item4=new ToDoList("可食用大豆磷脂调节血脂，降低胆固醇");
+        toDoLists.add(item4);
 
     }
     public void showBottomSheet(){
